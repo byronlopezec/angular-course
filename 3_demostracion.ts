@@ -1,5 +1,5 @@
 function saludar(nombre: string) {
-  console.log("hola " + nombre);
+  console.log("hola " + nombre.toUpperCase());
 }
 
 var wolverine = {
