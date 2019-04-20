@@ -1,20 +1,15 @@
-var nombre = "Pepito";
-var numero = 123;
-var booleano = true;
-var hoy = new Date();
-hoy = new Date("2019-04-20");
-console.log(hoy);
-var cualquiera;
-cualquiera = hoy;
-cualquiera = booleano;
-cualquiera = numero;
-cualquiera = nombre;
-console.log(cualquiera);
-var spiderman = {
-    nombre: "Peter",
-    edad: 20
-};
-spiderman = {
-    nombre: "PArker",
-    edad: 18
-};
+// Templates literales
+var nombre = "Brandom";
+var apellido = "Lee";
+var edad = 20;
+var texto = "Hola, " + nombre + " " + apellido + " (" + edad + ")";
+console.log(texto);
+var texto2 = "Hola, " + nombre + " " + apellido + " \n// sin necesidad de agregar el caracter \n para nueva lineas\n(" + edad + ")";
+console.log(texto2);
+var texto3 = "Suma: " + (20 + 12);
+console.log(texto3);
+//=========== Funciones!!! =========
+function resta(num2, num1) {
+    return num2 - num1;
+}
+console.log("la resta de 32 - 12 es: " + resta(32, 12));

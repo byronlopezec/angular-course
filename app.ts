@@ -1,27 +1,25 @@
-let nombre: string = "Pepito";
-let numero: number = 123;
-let booleano: boolean = true;
-let hoy: Date = new Date();
+// Templates literales
 
-hoy = new Date("2019-04-20");
+let nombre: string = "Brandom";
+let apellido: string = "Lee";
+let edad: number = 20;
 
-console.log(hoy);
+let texto = "Hola, " + nombre + " " + apellido + " (" + edad + ")";
+console.log(texto);
 
-let cualquiera: any;
-cualquiera = hoy;
-cualquiera = booleano;
-cualquiera = numero;
-cualquiera = nombre;
+let texto2 = `Hola, ${nombre} ${apellido} 
+// sin necesidad de agregar el caracter \n para nueva lineas
+(${edad})`;
 
-console.log(cualquiera);
+console.log(texto2);
 
-let spiderman = {
-  nombre: "Peter",
-  edad: 20
-};
+let texto3 = `Suma: ${20 + 12}`;
+console.log(texto3);
 
+//=========== Funciones!!! =========
 
-spiderman = {
-	nombre: "PArker",
-	edad: 18
+function resta(num2: number, num1: number) {
+  return num2 - num1;
 }
+
+console.log(`la resta de 32 - 12 es: ${resta(32, 12)}`);
