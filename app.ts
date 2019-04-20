@@ -1,16 +1,27 @@
-var mensaje = "Hola";
-let miNombre = "Buhobit";
-const anio = 2019;
+let nombre: string = "Pepito";
+let numero: number = 123;
+let booleano: boolean = true;
+let hoy: Date = new Date();
 
-if (true) {
-  var mensaje = "adios";
-  let miNombre = "Brandom";
-  const anio = 2018;
+hoy = new Date("2019-04-20");
+
+console.log(hoy);
+
+let cualquiera: any;
+cualquiera = hoy;
+cualquiera = booleano;
+cualquiera = numero;
+cualquiera = nombre;
+
+console.log(cualquiera);
+
+let spiderman = {
+  nombre: "Peter",
+  edad: 20
+};
+
+
+spiderman = {
+	nombre: "PArker",
+	edad: 18
 }
-
-//Imprime adios
-console.log(mensaje);
-//imprime Buhobit
-console.log(miNombre);
-// imprime 2019
-console.log(anio);
