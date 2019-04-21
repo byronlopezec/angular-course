@@ -1,14 +1,22 @@
-//no se puede poner los valores obligatorios al final
-function activar(quien, objeto, momento // parametro obcional siempre alfinal
-) {
-    if (objeto === void 0) { objeto = "batisenial"; }
-    var mensaje;
-    if (momento) {
-        mensaje = quien + " activo la " + objeto + " en la " + momento;
+var hulk = {
+    nombre: "Hulk",
+    smash: function () {
+        console.log(this.nombre + " smash!!");
     }
-    else {
-        mensaje = quien + " activo la " + objeto;
+};
+var hulkFlecha = {
+    nombre: "Hulk",
+    smash: function () {
+        var _this = this;
+        //Cuando se ejecuta un setTimeout el this apunta el windows o variable global,
+        //lo resuelvo usando función de flecha
+        setTimeout(function () {
+            console.log(this.nombre + " smash!!");
+        }, 2000);
+        setTimeout(function () {
+            console.log(_this.nombre + " smash!!");
+        }, 2000);
     }
-    console.log(mensaje);
-}
-activar("Gordon", "batisenial", "tarde");
+};
+hulk.smash();
+hulkFlecha.smash();
