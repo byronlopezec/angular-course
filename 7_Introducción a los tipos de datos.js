@@ -1,16 +1,16 @@
-var nombre = "Pepito";
-var numero = 123;
-var booleano = true;
-var hoy = new Date();
+let nombre = "Pepito";
+let numero = 123;
+let booleano = true;
+let hoy = new Date();
 hoy = new Date("2019-04-20");
 console.log(hoy);
-var cualquiera;
+let cualquiera;
 cualquiera = hoy;
 cualquiera = booleano;
 cualquiera = numero;
 cualquiera = nombre;
 console.log(cualquiera);
-var spiderman = {
+let spiderman = {
     nombre: "Peter",
     edad: 20
 };

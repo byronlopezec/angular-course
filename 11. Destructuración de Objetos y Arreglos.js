@@ -1,5 +1,5 @@
 // ============== Objetos
-var avenger = {
+let avenger = {
     nombre: "Steve",
     clave: "Capitan America",
     poder: "Droga"
@@ -10,9 +10,9 @@ var avenger = {
 //Lo anterior se puede simplificar en:
 // let { nombre, clave, poder } = avenger;
 // y si quiero puedo darle un alias
-var nombreAvenger = avenger.nombre, clave = avenger.clave, poder = avenger.poder;
+let { nombre: nombreAvenger, clave, poder } = avenger;
 console.log(nombreAvenger, clave, poder);
 // ============= Arreglos
-var avengers = ["Thor", "Ironman", "Tanos"];
-var posicion3 = avengers[2];
+let avengers = ["Thor", "Ironman", "Tanos"];
+let [, , posicion3] = avengers;
 console.log(posicion3);

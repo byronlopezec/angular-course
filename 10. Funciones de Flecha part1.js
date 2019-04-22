@@ -1,14 +1,14 @@
-var miFuncion = function (a, b) {
+let miFuncion = function (a, b) {
     return a + b;
 };
 // Función Flecha
-var miFuncionFlecha = function (a, b) {
+let miFuncionFlecha = (a, b) => {
     return a + b;
 };
-var miFuncion2 = function (nombre) {
+let miFuncion2 = function (nombre) {
     return nombre.toUpperCase();
 };
-var miFuncion2Flecha = function (nombre) {
+let miFuncion2Flecha = (nombre) => {
     return nombre.toUpperCase();
 };
 console.log(miFuncion(20, 60));

@@ -4,7 +4,7 @@
 function enviarMision(xmen) {
     console.log("Enviando a: " + xmen.name);
 }
-var wolverin = {
+let wolverin = {
     name: "Wolverine",
     // nombre: "Wolverine", me daria error porque no cumple con la interface
     poder: "regeneracion"

@@ -1,5 +1,5 @@
-var prom1 = new Promise(function (resolve, reject) {
-    setTimeout(function () {
+let prom1 = new Promise(function (resolve, reject) {
+    setTimeout(() => {
         //Ejecutar si esta bien,
         // resolve();
         //Ejecutar si esta mal
