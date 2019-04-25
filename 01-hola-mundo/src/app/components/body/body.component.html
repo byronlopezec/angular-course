@@ -3,28 +3,37 @@
     <h1>*ngIf</h1>
     <hr />
 
-    <div class="card text-white bg-primary mb-3" style="max-width: 100%;">
+    <div
+      *ngIf="mostrar"
+      class="card text-white bg-primary mb-3"
+      style="max-width: 100%;"
+    >
       <div class="card-body">
-        <h5 class="card-title">Primary card title</h5>
+        <h5 class="card-title">{{ frase.autor }}</h5>
         <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {{ frase.mensaje }}
         </p>
       </div>
     </div>
-    <button type="button" class="btn btn-outline-primary btn-block">
-      Mostrar/Ocultar
+
+    <button
+      (click)="mostrar = !mostrar"
+      type="button"
+      class="btn btn-outline-primary btn-block"
+    >
+      {{ mostrar ? "Ocultar" : "Mostrar" }}
     </button>
   </div>
   <div class="col">
     <h1>*ngFor</h1>
     <hr />
     <ul class="list-group">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Morbi leo risus</li>
-      <li class="list-group-item">Porta ac consectetur ac</li>
-      <li class="list-group-item">Vestibulum at eros</li>
+      <li
+        *ngFor="let personaje of personajes; let i = index"
+        class="list-group-item"
+      >
+        {{ personaje }}
+      </li>
     </ul>
   </div>
 </div>

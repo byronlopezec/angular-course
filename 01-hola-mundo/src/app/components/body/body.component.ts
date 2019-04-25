@@ -5,5 +5,11 @@ import { Component } from "@angular/core";
   templateUrl: "./body.component.html"
 })
 export class BodyComponent {
-  constructor() {}
+  mostrar: boolean = true;
+  frase: any = {
+    autor: "Ben Parker",
+    mensaje: "Un gran poder requiere una gran responsabalidad"
+  };
+
+  personajes: string[] = ["Spiderman", "Venom", "Dr. Octopus"];
 }
