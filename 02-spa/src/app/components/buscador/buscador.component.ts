@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Heroe, HeroesService } from "../../services/heroes.service";
 
@@ -7,7 +7,7 @@ import { Heroe, HeroesService } from "../../services/heroes.service";
   templateUrl: "./buscador.component.html"
 })
 export class BuscadorComponent implements OnInit {
-  heroes: Heroe[] = [];
+  @Input() heroes: Heroe[] = [];
   termino: string;
   constructor(
     private _heroesService: HeroesService,
