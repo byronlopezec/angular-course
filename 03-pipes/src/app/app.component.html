@@ -106,6 +106,21 @@
         <td>capitalizado: false</td>
         <td>{{ nombreCompleto | capitalizado: false }}</td>
       </tr>
+      <tr>
+        <th scope="row">{{ nombre }}</th>
+        <td>
+          <button
+            (click)="mostrar = !mostrar"
+            type="button"
+            class="btn  {{
+              mostrar ? 'btn-outline-primary' : 'btn-outline-success'
+            }} btn-block"
+          >
+            {{ mostrar ? "Ocultar Contraseña" : "Ver Contraseña" }}
+          </button>
+        </td>
+        <td>{{ nombre | contrasena: mostrar }}</td>
+      </tr>
     </tbody>
   </table>
 

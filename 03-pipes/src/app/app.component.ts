@@ -29,4 +29,5 @@ export class AppComponent {
   fecha = new Date();
 
   video = "fM791m4A_Pk";
+  mostrar: boolean = true;
 }
