@@ -56,6 +56,21 @@
         <td>percent: "2.0-2"</td>
         <td>{{ porcentaje | percent: "2.0-2" }}</td>
       </tr>
+      <tr>
+        <th scope="row">{{ dinero }}</th>
+        <td>currency</td>
+        <td>{{ dinero | currency }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ dinero }}</th>
+        <td>currency:'EUR':"code":"2.0-2"</td>
+        <td>{{ dinero | currency: "EUR":"code":"2.0-2" }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ dinero }}</th>
+        <td>currency:'EUR':"symbol": "2.0-2"</td>
+        <td>{{ dinero | currency: "EUR":"symbol":"2.0-2" }}</td>
+      </tr>
     </tbody>
   </table>
 
