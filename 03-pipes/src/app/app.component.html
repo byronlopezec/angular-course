@@ -117,5 +117,16 @@
   <h3>Pipe JSON</h3>
   <pre>{{ heroe | json }}</pre>
 
+  <h3>Youtube<small>video</small></h3>
+  <hr />
+  <iframe
+    width="560"
+    height="315"
+    [src]="video | domseguro: 'https://www.youtube.com/embed/'"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+
   <br /><br /><br /><br />
 </div>
