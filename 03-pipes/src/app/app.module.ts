@@ -9,9 +9,10 @@ registerLocaleData(localEs);
 
 //Components
 import { AppComponent } from "./app.component";
+import { CapitalizadoPipe } from "./pipes/capitalizado.pipe";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CapitalizadoPipe],
   imports: [BrowserModule],
   providers: [{ provide: LOCALE_ID, useValue: "es-EC" }],
   bootstrap: [AppComponent]

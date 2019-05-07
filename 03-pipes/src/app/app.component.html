@@ -94,7 +94,17 @@
       <tr>
         <th scope="row">{{ fecha }}</th>
         <td>date:'fullDate'</td>
-        <td>{{ fecha | date: "EEEE, d MMMM y" }}</td>
+        <td>{{ fecha | date: "EEEE, dd MMMM y" }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ nombreCompleto }}</th>
+        <td>capitalizado</td>
+        <td>{{ nombreCompleto | capitalizado }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ nombreCompleto }}</th>
+        <td>capitalizado: false</td>
+        <td>{{ nombreCompleto | capitalizado: false }}</td>
       </tr>
     </tbody>
   </table>
