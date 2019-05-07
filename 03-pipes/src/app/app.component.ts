@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-import { resolve } from "url";
-import { reject } from "q";
 
 @Component({
   selector: "app-root",
@@ -26,4 +24,6 @@ export class AppComponent {
   miPromesa = new Promise((resolve, reject) => {
     setTimeout(() => resolve("Llego la data"), 3500);
   });
+
+  fecha = new Date();
 }

@@ -76,6 +76,26 @@
         <td>Async</td>
         <td>{{ miPromesa | async }}</td>
       </tr>
+      <tr>
+        <th scope="row">{{ fecha }}</th>
+        <td>date</td>
+        <td>{{ fecha | date }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ fecha }}</th>
+        <td>date:'medium'</td>
+        <td>{{ fecha | date: "medium" }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ fecha }}</th>
+        <td>date:'fullDate'</td>
+        <td>{{ fecha | date: "fullDate" }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ fecha }}</th>
+        <td>date:'fullDate'</td>
+        <td>{{ fecha | date: "EEEE, d MMMM y" }}</td>
+      </tr>
     </tbody>
   </table>
 
