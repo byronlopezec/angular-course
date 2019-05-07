@@ -8,5 +8,5 @@ import { Component } from "@angular/core";
 export class AppComponent {
   nombre: string = "Buhobit";
   arreglo: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  title = "pipes";
+  PI: number = 3.1415926535;
 }
