@@ -1,5 +1,5 @@
 <div class="container">
-  <br>
+  <br />
   <h1>Pipes</h1>
   <hr />
   <table class="table">
@@ -21,6 +21,26 @@
         <td>lowercase</td>
         <td>{{ nombre | lowercase }}</td>
       </tr>
+      <tr>
+        <th scope="row">{{ nombre }}</th>
+        <td>slice:3</td>
+        <td>{{ nombre | slice: 3 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ nombre }}</th>
+        <td>slice:0:3</td>
+        <td>{{ nombre | slice: 0:3 }}</td>
+      </tr>
+      <tr>
+        <th scope="row">{{ arreglo }}</th>
+        <td>slice:1:5</td>
+        <td>{{ arreglo | slice: 1:5 }}</td>
+      </tr>
     </tbody>
   </table>
+
+  <h3>Slice</h3>
+  <ul>
+    <li *ngFor="let item of arreglo | slice: 5:10">{{ item }}</li>
+  </ul>
 </div>
