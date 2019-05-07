@@ -11,4 +11,13 @@ export class AppComponent {
   PI: number = 3.1415926535;
   porcentaje: number = 0.6146;
   dinero: number = 1225.99;
+  heroe = {
+    nombre: "Logan",
+    clave: "Wolverine",
+    edad: "500",
+    direccion: {
+      calle: "Avenida Smith",
+      casa: "S75"
+    }
+  };
 }
