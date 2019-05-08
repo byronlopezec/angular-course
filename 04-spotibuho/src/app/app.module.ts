@@ -1,11 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { SearchComponent } from './components/search/search.component';
-import { ArtistaComponent } from './components/artista/artista.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./components/home/home.component";
+import { SearchComponent } from "./components/search/search.component";
+import { ArtistaComponent } from "./components/artista/artista.component";
+import { NavbarComponent } from "./components/shared/navbar/navbar.component";
+
+//Rutas
+import { ROUTES } from "./app.routes";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -15,10 +19,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     ArtistaComponent,
     NavbarComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(ROUTES, { useHash: true })],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
