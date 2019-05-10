@@ -1,4 +1,5 @@
-<app-navbar></app-navbar>
+<app-loading *ngIf="!viewRoutes"></app-loading>
+<app-navbar *ngIf="viewRoutes"></app-navbar>
 <div class="container-12 m-4">
-  <router-outlet></router-outlet>
+  <router-outlet *ngIf="viewRoutes"></router-outlet>
 </div>
