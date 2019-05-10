@@ -1,1 +1,6 @@
-<app-tarjetas [items]="nuevasCanciones"></app-tarjetas>
+<div class="container">
+  <h3>NUEVOS <small>LANZAMIENTOS</small></h3>
+  <hr />
+  <app-loading *ngIf="viewLoading"></app-loading>
+  <app-tarjetas *ngIf="!viewLoading" [items]="nuevasCanciones"></app-tarjetas>
+</div>

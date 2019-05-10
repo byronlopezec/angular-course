@@ -1,13 +1,13 @@
-<div class="row m-2">
-  <div class="col">
+<div class="row">
+  <div class="col" style="margin-bottom: 2%">
     <input
       #termino
       type="text"
       placeholder="Buscar Artista..."
-      (keyup)="buscar(termino.value)"
+      (keyup)="termino.value && buscar(termino.value)"
       class="form-control"
     />
   </div>
 </div>
-
-<app-tarjetas [items]="artists"></app-tarjetas>
+<app-loading *ngIf="viewLoading"></app-loading>
+<app-tarjetas *ngIf="!viewLoading" [items]="artists"></app-tarjetas>
