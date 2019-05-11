@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-artista',
-  templateUrl: './artista.component.html',
+  selector: "app-artista",
+  templateUrl: "./artista.component.html",
   styles: []
 })
 export class ArtistaComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private router: ActivatedRoute) {
+    this.router.params.subscribe(data => {
+      console.log(data);
+    });
   }
 
+  ngOnInit() {}
 }
