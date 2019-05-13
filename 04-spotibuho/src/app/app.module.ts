@@ -11,9 +11,12 @@ import { NavbarComponent } from "./components/shared/navbar/navbar.component";
 
 // Rutas
 import { ROUTES } from "./app.routes";
-import { NoimagePipe } from './pipes/noimage.pipe';
-import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
-import { LoadingComponent } from './components/shared/loading/loading.component';
+// Pipes
+import { NoimagePipe } from "./pipes/noimage.pipe";
+import { DomSeguroPipe } from "./pipes/domseguro.pipe";
+
+import { TarjetasComponent } from "./components/tarjetas/tarjetas.component";
+import { LoadingComponent } from "./components/shared/loading/loading.component";
 
 @NgModule({
   declarations: [
@@ -23,14 +26,11 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
+    DomSeguroPipe,
     TarjetasComponent,
     LoadingComponent
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
-  ],
+  imports: [HttpClientModule, BrowserModule, RouterModule.forRoot(ROUTES, { useHash: true })],
   providers: [],
   bootstrap: [AppComponent]
 })

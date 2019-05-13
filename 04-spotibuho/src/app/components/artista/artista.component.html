@@ -26,7 +26,17 @@
           <td><img class="img-thumb" [src]="track.album.images | noimage" /></td>
           <td>{{ track.album.name }}</td>
           <td>{{ track.name }}</td>
-          <td><audio src="{{ track.preview_url }}" controls></audio></td>
+          <td>
+            <!-- <audio src="{{ track.preview_url }}" controls></audio> -->
+            <iframe
+              [src]="track.id | domseguro: 'https://open.spotify.com/embed/track/'"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </td>
         </tr>
       </tbody>
     </table>
