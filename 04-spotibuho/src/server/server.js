@@ -3,6 +3,8 @@
         Esta aplicación únicamente toma el CLIENTID y CLIENTSecret
         que brinda spotify, para obtener el token mediante una petición
         POST desde el front-end.
+        =================
+        node src/server/server.js --watch 3000
 */
 
 const express = require("express");

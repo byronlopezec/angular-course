@@ -51,4 +51,8 @@ export class SpotifyService {
       })
     );
   }
+
+  getArtist(id: string) {
+    return this.getQuery(`artists/${id}`);
+  }
 }
