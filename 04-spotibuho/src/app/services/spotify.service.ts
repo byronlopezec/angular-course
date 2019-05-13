@@ -55,4 +55,13 @@ export class SpotifyService {
   getArtist(id: string) {
     return this.getQuery(`artists/${id}`);
   }
+
+  getTopTracks(id: string) {
+    return this.getQuery(`artists/${id}/top-tracks?country=US`).pipe(
+      map((data: any) => {
+        console.log("TCL: SpotifyService -> getTopTracks -> data", data);
+        return data.tracks;
+      })
+    );
+  }
 }

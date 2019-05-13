@@ -9,11 +9,13 @@ import { SpotifyService } from "../../services/spotify.service";
 })
 export class ArtistaComponent {
   artista: any;
+  topTracks: any;
   verLoading: boolean;
   constructor(private router: ActivatedRoute, private spotifyServer: SpotifyService) {
     this.verLoading = true;
-    this.router.params.subscribe(data => {
-      this.getArtist(data.id);
+    this.router.params.subscribe(params => {
+      this.getArtist(params.id);
+      this.getTopTracks(params.id);
     });
   }
 
@@ -22,6 +24,14 @@ export class ArtistaComponent {
       console.log("TCL: ArtistaComponent -> getArtist -> artista", artista);
       this.artista = artista;
       this.verLoading = false;
+    });
+  }
+
+  getTopTracks(id: string) {
+    this.spotifyServer.getTopTracks(id).subscribe(topTracks => {
+      this.topTracks = topTracks;
+      this.verLoading = false;
+      console.log("TCL: ArtistaComponent -> getTopTracks -> topTracks", topTracks);
     });
   }
 }

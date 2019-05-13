@@ -9,6 +9,10 @@ hr {
   border-color: white;
 }
 
+.table {
+  background-color: black;
+}
+
 .puntero {
   cursor: pointer;
 }
