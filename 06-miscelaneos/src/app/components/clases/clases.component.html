@@ -16,3 +16,10 @@
 >
   Cambiar
 </button>
+
+<hr />
+<h3>Guardar <small> Cambios!!!</small></h3>
+<button type="button" class="btn btn-primary mb-5" [disabled]="loading" (click)="ejecutar()">
+  <i class="fa" [ngClass]="{ 'fa-spinner fa-pulse': loading, 'fa-save': !loading }"></i>
+  {{ loading ? "Guardando..." : "Guardar Cambios" }}
+</button>
