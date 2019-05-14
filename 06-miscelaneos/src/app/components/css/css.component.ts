@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [
     `
       p {
+        color: red;
         font-size: 40px;
       }
     `

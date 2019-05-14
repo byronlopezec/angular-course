@@ -1,0 +1,18 @@
+<div [ngClass]="alerta" class="alert" role="alert">Un simple alert!! {{ alerta }}</div>
+
+<button type="button" class="btn btn-outline-primary" (click)="alerta = 'alert-info'">Change Alert to Info</button>
+<button type="button" class="btn btn-outline-danger" (click)="alerta = 'alert-danger'">Change Alert to danger</button>
+<button type="button" class="btn btn-outline-success" (click)="alerta = 'alert-success'">
+  Change Alert to success
+</button>
+<hr />
+<h3 [ngClass]="{ 'text-danger': propiedades.danger, 'text-info': !propiedades.danger }">Propiedades con ngClass</h3>
+
+<button
+  type="button"
+  class="btn"
+  [ngClass]="{ 'btn-danger': propiedades.danger, 'btn-info': !propiedades.danger }"
+  (click)="propiedades.danger = !propiedades.danger"
+>
+  Cambiar
+</button>
