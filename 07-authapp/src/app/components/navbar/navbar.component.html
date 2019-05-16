@@ -11,7 +11,7 @@
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/precios']" routerLinkActive="active">Precios</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="isAuthenticated()">
                 <a class="nav-link" [routerLink]="['/protegida']" routerLinkActive="active">Protegida</a>
             </li>
         </ul>

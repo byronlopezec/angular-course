@@ -10,12 +10,13 @@ import { ProtegidaComponent } from './components/protegida/protegida.component';
 // Rutas
 import { APP_ROUTES } from './app.routes';
 import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavbarComponent, PreciosComponent, ProtegidaComponent],
 
   imports: [BrowserModule, APP_ROUTES],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
