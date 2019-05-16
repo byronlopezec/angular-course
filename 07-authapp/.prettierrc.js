@@ -10,7 +10,7 @@ module.exports = {
     bracketSpacing: true,
     jsxBracketSameLine: false,
     arrowParens: 'always', //"<avoid|always>"
-    parser: 'babylon',
+    // parser: 'babylon',
     proseWrap: 'preserve', //"<always|never|preserve>"
     htmlWhitespaceSensitivity: 'css' //'<css|strict|ignore>',
 };
