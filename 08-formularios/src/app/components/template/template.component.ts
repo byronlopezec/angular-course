@@ -20,9 +20,6 @@ export class TemplateComponent implements OnInit {
   ngOnInit() {}
 
   guardar(forma: NgForm) {
-    setTimeout((data) => {
-      console.log(data);
-    }, 200);
     console.log('TemplateComponent -> guardar -> forma', forma);
     console.log('Out: TemplateComponent -> guardar -> forma.value', forma.value);
     console.log('Out: TemplateComponent -> usuario', this.usuario);

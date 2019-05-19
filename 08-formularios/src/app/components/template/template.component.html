@@ -36,6 +36,7 @@
           name="apellido"
           [(ngModel)]="usuario['apellido']"
           required
+          minlength="5"
           #apellido="ngModel"
         />
         <small class="sms-error" *ngIf="apellido.errors && apellido.errors['required'] && apellido.touched"
@@ -60,7 +61,14 @@
         [(ngModel)]="usuario['correo']"
         required
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        #correo="ngModel"
       />
+      <small class="sms-error" *ngIf="correo.errors && correo.errors['required'] && correo.touched"
+        >Campo Requerido
+      </small>
+      <small class="sms-error" *ngIf="correo.errors && correo.errors['pattern']"
+        >No cumple con nuestra politica de correo</small
+      >
     </div>
   </div>
 
