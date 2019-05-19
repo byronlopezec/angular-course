@@ -1,0 +1,7 @@
+.ng-invalid.ng-touched:not(form) {
+  border: crimson solid 2px;
+}
+
+.sms-error {
+  color: crimson;
+}

@@ -7,16 +7,22 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./template.component.css'],
 })
 export class TemplateComponent implements OnInit {
-  usuario: object = {
-    nombre: 'byron',
-    apellido: 'lopez',
-    correo: 'byron.lopez@epn.edu.ec',
-  };
-  constructor() {}
+  usuario: object;
+
+  constructor() {
+    this.usuario = {
+      nombre: '',
+      apellido: '',
+      correo: '',
+    };
+  }
 
   ngOnInit() {}
 
   guardar(forma: NgForm) {
+    setTimeout((data) => {
+      console.log(data);
+    }, 200);
     console.log('TemplateComponent -> guardar -> forma', forma);
     console.log('Out: TemplateComponent -> guardar -> forma.value', forma.value);
     console.log('Out: TemplateComponent -> usuario', this.usuario);
