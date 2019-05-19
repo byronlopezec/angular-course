@@ -1,20 +1,37 @@
 <h4>Formularios <small>template</small></h4>
 
 <hr />
-
-<form (ngSubmit)="guardar()" novalidate="">
+<!-- Referencia local #forma de tipo ngForm -->
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
   <div>
     <div class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
       <div class="col-8">
-        <input class="form-control" type="text" placeholder="Nombre" name="nombre" ngModel required minlength="5" />
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          [(ngModel)]="usuario.nombre"
+          required
+          minlength="5"
+        />
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-2 col-form-label">Apellido</label>
       <div class="col-8">
-        <input class="form-control" type="text" placeholder="Apellido" name="apellido" ngModel requerid />
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Apellido"
+          name="apellido"
+          [(ngModel)]="usuario.apellido"
+          requerid
+        />
+        <!-- [ngModel]="usuario.apellido" solo recibe informacion  -->
+        <!-- [(ngModel)]="usuario.apellido" recibe y emite cambios  -->
       </div>
     </div>
   </div>
@@ -22,7 +39,14 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">Correo</label>
     <div class="col-md-8">
-      <input class="form-control" type="email" placeholder="Correo electrónico" name="correo" ngModel requerid />
+      <input
+        class="form-control"
+        type="email"
+        placeholder="Correo electrónico"
+        name="correo"
+        [(ngModel)]="usuario.correo"
+        requerid
+      />
     </div>
   </div>
 
