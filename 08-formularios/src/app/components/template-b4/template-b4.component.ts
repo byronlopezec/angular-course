@@ -8,13 +8,34 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateB4Component implements OnInit {
   usuario: object;
+  paises: object;
+  sexo: string[];
 
   constructor() {
     this.usuario = {
       nombre: '',
       apellido: '',
       correo: '',
+      pais: '',
+      sexo: 'Masculino',
+      acepta: false,
     };
+    this.sexo = ['Masculino', 'Femenino', 'Sin Definir'];
+
+    this.paises = [
+      {
+        codigo: 'es',
+        nombre: 'España',
+      },
+      {
+        codigo: 'ec',
+        nombre: 'Ecuador',
+      },
+      {
+        codigo: 'us',
+        nombre: 'Estados Unidos',
+      },
+    ];
   }
 
   ngOnInit() {}

@@ -68,6 +68,52 @@
   </div>
 
   <div class="form-group row">
+    <label class="col-2 col-form-label">País</label>
+    <div class="col-md-8">
+      <select [(ngModel)]="usuario['pais']" name="pais" class="form-control" required>
+        <option value="">Seleccione un país</option>
+        <option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Sexo</label>
+    <div class="col-md-8">
+      <div *ngFor="let itemSexo of sexo" class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input
+            [(ngModel)]="usuario['sexo']"
+            class="form-check-input"
+            type="radio"
+            name="sexo"
+            id="sexo"
+            [value]="itemSexo"
+          />
+          {{ itemSexo }}
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Sexo</label>
+    <div class="col-md-8">
+      <div class="form-check form-check-inline">
+        <label class="form-check-label">
+          <input
+            [(ngModel)]="usuario['acepta']"
+            class="form-check-input"
+            type="checkbox"
+            name="acepta"
+            id="acepta"
+            value="checkedValue"
+            required
+          />
+          Acepta las condiciones
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
       <button [disabled]="forma.invalid" type="submit" class="btn btn-outline-primary">
@@ -76,3 +122,5 @@
     </div>
   </div>
 </form>
+
+<pre>{{ usuario | json }}</pre>
