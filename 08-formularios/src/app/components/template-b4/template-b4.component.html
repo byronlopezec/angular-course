@@ -1,0 +1,78 @@
+<h4>Formularios <small>template</small></h4>
+
+<hr />
+<!-- Referencia local #forma de tipo ngForm -->
+<form (ngSubmit)="guardar(forma)" #forma="ngForm">
+  <div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+        <input
+          [ngClass]="{ 'is-invalid': nombre.errors && nombre.touched, 'is-valid': !nombre.errors }"
+          class="form-control"
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+          [(ngModel)]="usuario['nombre']"
+          minlength="5"
+          required
+          #nombre="ngModel"
+        />
+        <div class="invalid-feedback">
+          {{ nombre.errors && nombre.errors['required'] && 'Campo necesario' }}
+          {{ nombre.errors && nombre.errors['minlength'] && 'Se aceptan mínimo 5 caracteres' }}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+        <input
+          [ngClass]="{ 'is-invalid': apellido.errors && apellido.touched, 'is-valid': !apellido.errors }"
+          class="form-control"
+          type="text"
+          placeholder="Apellido"
+          name="apellido"
+          [(ngModel)]="usuario['apellido']"
+          required
+          minlength="5"
+          #apellido="ngModel"
+        />
+        <div class="invalid-feedback">
+          {{ apellido.errors && apellido.errors['required'] && 'Campo necesario' }}
+          {{ apellido.errors && apellido.errors['minlength'] && 'Se aceptan mínimo 5 caracteres' }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Correo</label>
+    <div class="col-md-8">
+      <input
+        [ngClass]="{ 'is-invalid': correo.errors && correo.touched, 'is-valid': !correo.errors }"
+        class="form-control"
+        type="email"
+        placeholder="Correo electrónico"
+        name="correo"
+        [(ngModel)]="usuario['correo']"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        #correo="ngModel"
+      />
+      <div class="invalid-feedback">
+        {{ correo.errors && correo.errors['required'] && 'Campo obligatorio' }}
+        {{ correo.errors && correo.errors['pattern'] && 'Correo no encontrado' }}
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button [disabled]="forma.invalid" type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+    </div>
+  </div>
+</form>

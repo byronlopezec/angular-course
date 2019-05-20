@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { DataComponent } from './components/data/data.component';
 import { TemplateComponent } from './components/template/template.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { TemplateB4Component } from './components/template-b4/template-b4.component';
 
 @NgModule({
-  declarations: [AppComponent, DataComponent, TemplateComponent, NavbarComponent],
+  declarations: [AppComponent, DataComponent, TemplateComponent, NavbarComponent, TemplateB4Component],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
