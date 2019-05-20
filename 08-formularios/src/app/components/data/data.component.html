@@ -5,25 +5,55 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">Nombre</label>
     <div class="col-8">
-      <input formControlName="nombre" class="form-control" type="text" placeholder="Nombre" name="nombre" />
+      <input
+        [ngClass]="{ 'is-invalid': isInvalid('nombre'), 'is-valid': isValid('nombre') }"
+        formControlName="nombre"
+        class="form-control"
+        type="text"
+        placeholder="Nombre"
+        name="nombre"
+      />
+      <div class="invalid-feedback">
+        {{ isInvalid('nombre') }}
+      </div>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-2 col-form-label">Apellido</label>
     <div class="col-8">
-      <input formControlName="apellido" class="form-control" type="text" placeholder="Apellido" name="Apellido" />
+      <input
+        [ngClass]="{ 'is-invalid': isInvalid('apellido'), 'is-valid': isValid('apellido') }"
+        formControlName="apellido"
+        class="form-control"
+        type="text"
+        placeholder="Apellido"
+        name="Apellido"
+      />
+      <div class="invalid-feedback">
+        {{ isInvalid('apellido') }}
+      </div>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-2 col-form-label">Correo</label>
     <div class="col-8">
-      <input formControlName="correo" class="form-control" type="email" placeholder="Correo" name="Correo" />
+      <input
+        [ngClass]="{ 'is-invalid': isInvalid('correo'), 'is-valid': isValid('correo') }"
+        formControlName="correo"
+        class="form-control"
+        type="email"
+        placeholder="Correo"
+        name="Correo"
+      />
+      <div class="invalid-feedback">
+        {{ isInvalid('correo') }}
+      </div>
     </div>
   </div>
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button [disabled]="forma.invalid" type="submit" class="btn btn-outline-primary">
         Guardar
       </button>
     </div>
