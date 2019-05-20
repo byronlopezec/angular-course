@@ -17,11 +17,11 @@
           required
           #nombre="ngModel"
         />
-        <small class="sms-error" *ngIf="nombre.errors && nombre.errors['required'] && nombre.touched"
-          >Campo Requerido
+        <small class="sms-error" *ngIf="nombre.errors && nombre.errors['required'] && nombre.touched">
+          Campo Requerido
         </small>
-        <small class="sms-error" *ngIf="nombre.errors && nombre.errors['minlength']"
-          >Ingrese mínimo {{ nombre.errors['minlength']['requiredLength'] }} caracteres
+        <small class="sms-error" *ngIf="nombre.errors && nombre.errors['minlength']">
+          Ingrese mínimo {{ nombre.errors['minlength']['requiredLength'] }} caracteres
         </small>
       </div>
     </div>
@@ -39,11 +39,11 @@
           minlength="5"
           #apellido="ngModel"
         />
-        <small class="sms-error" *ngIf="apellido.errors && apellido.errors['required'] && apellido.touched"
-          >Campo Requerido
+        <small class="sms-error" *ngIf="apellido.errors && apellido.errors['required'] && apellido.touched">
+          Campo Requerido
         </small>
-        <small class="sms-error" *ngIf="apellido.errors && apellido.errors['minlength']"
-          >Ingrese mínimo {{ apellido.errors['minlength']['requiredLength'] }} caracteres
+        <small class="sms-error" *ngIf="apellido.errors && apellido.errors['minlength']">
+          Ingrese mínimo {{ apellido.errors['minlength']['requiredLength'] }} caracteres
         </small>
         <!-- [ngModel]="usuario.apellido" solo recibe informacion -->
         <!-- [(ngModel)]="usuario.apellido" recibe y emite cambios  -->
@@ -63,19 +63,19 @@
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
         #correo="ngModel"
       />
-      <small class="sms-error" *ngIf="correo.errors && correo.errors['required'] && correo.touched"
-        >Campo Requerido
+      <small class="sms-error" *ngIf="correo.errors && correo.errors['required'] && correo.touched">
+        Campo Requerido
       </small>
-      <small class="sms-error" *ngIf="correo.errors && correo.errors['pattern']"
-        >No cumple con nuestra politica de correo</small
-      >
+      <small class="sms-error" *ngIf="correo.errors && correo.errors['pattern']">
+        Correo No encontrado!
+      </small>
     </div>
   </div>
 
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button [disabled]="forma.invalid" type="submit" class="btn btn-outline-primary">
         Guardar
       </button>
     </div>
