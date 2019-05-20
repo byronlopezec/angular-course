@@ -1,126 +1,19 @@
 <h4>Formularios <small>data</small></h4>
-
 <hr />
-<!-- Referencia local #forma de tipo ngForm -->
-<form (ngSubmit)="guardar(forma)" #forma="ngForm">
-  <div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Nombre</label>
-      <div class="col-8">
-        <input
-          [ngClass]="{ 'is-invalid': nombre.errors && nombre.touched, 'is-valid': !nombre.errors }"
-          class="form-control"
-          type="text"
-          placeholder="Nombre"
-          name="nombre"
-          [(ngModel)]="usuario['nombre']"
-          minlength="5"
-          required
-          #nombre="ngModel"
-        />
-        <div class="invalid-feedback">
-          {{ nombre.errors && nombre.errors['required'] && 'Campo necesario' }}
-          {{ nombre.errors && nombre.errors['minlength'] && 'Se aceptan mínimo 5 caracteres' }}
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Apellido</label>
-      <div class="col-8">
-        <input
-          [ngClass]="{ 'is-invalid': apellido.errors && apellido.touched, 'is-valid': !apellido.errors }"
-          class="form-control"
-          type="text"
-          placeholder="Apellido"
-          name="apellido"
-          [(ngModel)]="usuario['apellido']"
-          required
-          minlength="5"
-          #apellido="ngModel"
-        />
-        <div class="invalid-feedback">
-          {{ apellido.errors && apellido.errors['required'] && 'Campo necesario' }}
-          {{ apellido.errors && apellido.errors['minlength'] && 'Se aceptan mínimo 5 caracteres' }}
-        </div>
-      </div>
-    </div>
-  </div>
+<form [formGroup]="forma" (ngSubmit)="guardar()">
   <div class="form-group row">
-    <label class="col-2 col-form-label">Correo</label>
-    <div class="col-md-8">
-      <input
-        [ngClass]="{ 'is-invalid': correo.errors && correo.touched, 'is-valid': !correo.errors }"
-        class="form-control"
-        type="email"
-        placeholder="Correo electrónico"
-        name="correo"
-        [(ngModel)]="usuario['correo']"
-        required
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-        #correo="ngModel"
-      />
-      <div class="invalid-feedback">
-        {{ correo.errors && correo.errors['required'] && 'Campo obligatorio' }}
-        {{ correo.errors && correo.errors['pattern'] && 'Correo no encontrado' }}
-      </div>
-    </div>
-  </div>
-
-  <div class="form-group row">
-    <label class="col-2 col-form-label">País</label>
-    <div class="col-md-8">
-      <select [(ngModel)]="usuario['pais']" name="pais" class="form-control" required>
-        <option value="">Seleccione un país</option>
-        <option *ngFor="let pais of paises" [value]="pais.nombre">{{ pais.nombre }}</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Sexo</label>
-    <div class="col-md-8">
-      <div *ngFor="let itemSexo of sexo" class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input
-            [(ngModel)]="usuario['sexo']"
-            class="form-check-input"
-            type="radio"
-            name="sexo"
-            id="sexo"
-            [value]="itemSexo"
-          />
-          {{ itemSexo }}
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-2 col-form-label">Sexo</label>
-    <div class="col-md-8">
-      <div class="form-check form-check-inline">
-        <label class="form-check-label">
-          <input
-            [(ngModel)]="usuario['acepta']"
-            class="form-check-input"
-            type="checkbox"
-            name="acepta"
-            id="acepta"
-            value="checkedValue"
-            required
-          />
-          Acepta las condiciones
-        </label>
-      </div>
+    <label class="col-2 col-form-label">Nombre</label>
+    <div class="col-8">
+      <input class="form-control" type="text" placeholder="Nombre" name="nombre" minlength="5" required />
     </div>
   </div>
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button [disabled]="forma.invalid" type="submit" class="btn btn-outline-primary">
+      <button type="submit" class="btn btn-outline-primary">
         Guardar
       </button>
     </div>
   </div>
 </form>
-
-<pre>{{ usuario | json }}</pre>
