@@ -1,0 +1,73 @@
+<h4>Formularios <small>data</small></h4>
+<hr />
+
+<form [formGroup]="forma" (ngSubmit)="guardar()">
+  <div formGroupName="nombreCompleto">
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+        <input
+          formControlName="nombre"
+          [ngClass]="{
+            'is-invalid': isInvalid(forma.controls.nombreCompleto.controls.nombre),
+            'is-valid': isValid(forma.controls.nombreCompleto.controls.nombre)
+          }"
+          class="form-control"
+          type="text"
+          placeholder="Nombre"
+          name="nombre"
+        />
+        <div class="invalid-feedback">
+          {{ isInvalid(forma['controls'].nombreCompleto.controls.nombre) }}
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+        <input
+          [ngClass]="{
+            'is-invalid': isInvalid(forma.controls.nombreCompleto.controls.apellido),
+            'is-valid': isValid(forma.controls.nombreCompleto.controls.apellido)
+          }"
+          formControlName="apellido"
+          class="form-control"
+          type="text"
+          placeholder="Apellido"
+          name="Apellido"
+        />
+        <div class="invalid-feedback">
+          {{ isInvalid(forma['controls'].nombreCompleto.controls.apellido) }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Correo</label>
+    <div class="col-8">
+      <input
+        [ngClass]="{ 'is-invalid': isInvalid(forma.controls.correo), 'is-valid': isValid(forma.controls.correo) }"
+        formControlName="correo"
+        class="form-control"
+        type="email"
+        placeholder="Correo"
+        name="Correo"
+      />
+      <div class="invalid-feedback">
+        {{ isInvalid(forma['controls'].correo) }}
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button [disabled]="forma.invalid" type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+    </div>
+  </div>
+
+  <pre>
+    {{ forma.valid | json }}
+  </pre>
+</form>

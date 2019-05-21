@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { stringify } from '@angular/core/src/render3/util';
 
 @Component({
   selector: 'app-data',
