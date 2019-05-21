@@ -9,8 +9,8 @@
         <input
           formControlName="nombre"
           [ngClass]="{
-            'is-invalid': isInvalid(forma.controls.nombreCompleto.controls.nombre),
-            'is-valid': isValid(forma.controls.nombreCompleto.controls.nombre)
+            'is-invalid': isInvalid(forma.get('nombreCompleto.nombre')),
+            'is-valid': isValid(forma.get('nombreCompleto.nombre'))
           }"
           class="form-control"
           type="text"
@@ -18,7 +18,7 @@
           name="nombre"
         />
         <div class="invalid-feedback">
-          {{ isInvalid(forma['controls'].nombreCompleto.controls.nombre) }}
+          {{ isInvalid(forma.get('nombreCompleto.nombre')) }}
         </div>
       </div>
     </div>
@@ -27,8 +27,8 @@
       <div class="col-8">
         <input
           [ngClass]="{
-            'is-invalid': isInvalid(forma.controls.nombreCompleto.controls.apellido),
-            'is-valid': isValid(forma.controls.nombreCompleto.controls.apellido)
+            'is-invalid': isInvalid(forma.get('nombreCompleto.apellido')),
+            'is-valid': isValid(forma.get('nombreCompleto.apellido'))
           }"
           formControlName="apellido"
           class="form-control"
@@ -37,7 +37,7 @@
           name="Apellido"
         />
         <div class="invalid-feedback">
-          {{ isInvalid(forma['controls'].nombreCompleto.controls.apellido) }}
+          {{ isInvalid(forma.get('nombreCompleto.apellido')) }}
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
     <label class="col-2 col-form-label">Correo</label>
     <div class="col-8">
       <input
-        [ngClass]="{ 'is-invalid': isInvalid(forma.controls.correo), 'is-valid': isValid(forma.controls.correo) }"
+        [ngClass]="{ 'is-invalid': isInvalid(forma.get('correo')), 'is-valid': isValid(forma.get('correo')) }"
         formControlName="correo"
         class="form-control"
         type="email"
@@ -54,7 +54,7 @@
         name="Correo"
       />
       <div class="invalid-feedback">
-        {{ isInvalid(forma['controls'].correo) }}
+        {{ isInvalid(forma.get('correo')) }}
       </div>
     </div>
   </div>

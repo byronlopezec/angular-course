@@ -9,6 +9,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class DataGroupComponent {
   forma: FormGroup;
 
+  usuario: object = {
+    nombreCompleto: {
+      nombre: '',
+      apellido: '',
+    },
+    correo: '',
+  };
+
   constructor() {
     this.forma = new FormGroup({
       nombreCompleto: new FormGroup({
@@ -22,6 +30,10 @@ export class DataGroupComponent {
   guardar() {
     console.log(': DataComponent -> formGroup', this.forma.value);
     console.log(': DataComponent -> formGroup', this.forma);
+    this.forma.reset(this.usuario); //  mejor Manera
+    // No gran opcion para resetear
+    // this.forma.get('nombreCompleto').setValue({ nombre: '', apellido: '' });
+    // this.forma.get('correo').setValue('');
   }
 
   isInvalid(control: FormControl): string {
