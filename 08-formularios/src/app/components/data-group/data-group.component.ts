@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-data-group',
@@ -15,6 +15,7 @@ export class DataGroupComponent {
       apellido: '',
     },
     correo: '',
+    pasaTiempos: [],
   };
 
   constructor() {
@@ -24,7 +25,12 @@ export class DataGroupComponent {
         apellido: new FormControl('', [Validators.required, Validators.minLength(5)]),
       }),
       correo: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')]),
+      pasaTiempos: new FormArray([new FormControl('', [Validators.required])]),
     });
+  }
+
+  nuevoPasatiempo() {
+    (this.forma.get('pasaTiempos') as FormArray).push(new FormControl('', Validators.required));
   }
 
   guardar() {

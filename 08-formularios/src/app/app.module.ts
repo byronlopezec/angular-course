@@ -11,7 +11,14 @@ import { TemplateB4Component } from './components/template-b4/template-b4.compon
 import { DataGroupComponent } from './components/data-group/data-group.component';
 
 @NgModule({
-  declarations: [AppComponent, DataComponent, TemplateComponent, NavbarComponent, TemplateB4Component, DataGroupComponent],
+  declarations: [
+    AppComponent,
+    DataComponent,
+    TemplateComponent,
+    NavbarComponent,
+    TemplateB4Component,
+    DataGroupComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
