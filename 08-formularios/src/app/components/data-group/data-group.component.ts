@@ -21,14 +21,26 @@ export class DataGroupComponent {
   constructor() {
     this.forma = new FormGroup({
       nombreCompleto: new FormGroup({
-        nombre: new FormControl('', [Validators.required, Validators.minLength(5)]),
-        apellido: new FormControl('', [Validators.required, Validators.minLength(5)]),
+        nombre: new FormControl('', [Validators.required, Validators.minLength(5), this.sinEspacios]),
+        apellido: new FormControl('', [Validators.required, Validators.minLength(5), this.sinEspacios]),
       }),
       correo: new FormControl('', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')]),
       pasaTiempos: new FormArray([new FormControl('', [Validators.required])]),
     });
   }
 
+  // Crear validaciones
+  sinEspacios(control: FormControl): { [s: string]: boolean } {
+    const valor = control.value + '';
+
+    if (valor.lastIndexOf(' ') >= 0) {
+      return { sinEspacios: true };
+    }
+
+    return null;
+  }
+
+  // Agregar elmento a mi FormArray
   nuevoPasatiempo() {
     (this.forma.get('pasaTiempos') as FormArray).push(new FormControl('', Validators.required));
   }
@@ -60,6 +72,9 @@ export class DataGroupComponent {
     }
     if (tipo === 'minlength') {
       return 'Se permiten minimo 5 caracteres';
+    }
+    if (tipo === 'sinEspacios') {
+      return 'Ningun dato con espacios es aceptado';
     }
     if (tipo === 'pattern') {
       return 'Correo no encontrado';
