@@ -34,6 +34,10 @@ export class DataGroupComponent {
     });
 
     this.forma.get('password2').setValidators([Validators.required, this.noiguales.bind(this.forma)]);
+
+    // this.forma.valueChanges.subscribe((data) => {
+    //   console.log(data);
+    // });
   }
 
   existeUsuario(control: FormControl): Promise<any> | Observable<any> {
@@ -88,6 +92,7 @@ export class DataGroupComponent {
       return '';
     } else {
       const tipo = Object.keys(control.errors)[0] + '';
+
       return this.getMessageError(tipo);
     }
   }
