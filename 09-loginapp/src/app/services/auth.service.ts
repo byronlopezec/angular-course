@@ -17,5 +17,17 @@ export class AuthService {
   logout() {}
   login(usuario: UsuarioModel) {}
 
-  registrarUsuario(usuario: UsuarioModel) {}
+  registrarUsuario(usuario: UsuarioModel) {
+    // const authData = {
+    //   email: usuario.email,
+    //   pasword: usuario.password,
+    //   returnSecureToken: true,
+    // };
+    const authData = {
+      ...usuario,
+      returnSecureToken: true,
+    };
+
+    return this.http.post(this.url + `/signupNewUser?key=${this.apikey}`, authData);
+  }
 }
