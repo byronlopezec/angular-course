@@ -15,19 +15,26 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   logout() {}
-  login(usuario: UsuarioModel) {}
+  login(usuario: UsuarioModel) {
+    const authData = {
+      ...usuario,
+      returnSecureToken: true,
+    };
+
+    return this.http.post(`${this.url}/verifyPassword?key=${this.apikey}`, authData);
+  }
 
   registrarUsuario(usuario: UsuarioModel) {
     // const authData = {
     //   email: usuario.email,
     //   pasword: usuario.password,
     //   returnSecureToken: true,
-    // };
+    // }; con el operador spread mejor ...
     const authData = {
       ...usuario,
       returnSecureToken: true,
     };
 
-    return this.http.post(this.url + `/signupNewUser?key=${this.apikey}`, authData);
+    return this.http.post(`${this.url}/signupNewUser?key=${this.apikey}`, authData);
   }
 }
