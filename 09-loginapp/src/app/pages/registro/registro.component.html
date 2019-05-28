@@ -6,7 +6,9 @@
           Crear nueva cuenta
         </span>
 
-        <!-- <span class="text-danger">El correo es obligatorio</span> -->
+        <span *ngIf="forma.submitted && forma.controls['email']?.errors" class="text-danger">
+          El correo es obligatorio
+        </span>
         <div class="wrap-input100 m-b-16">
           <input
             [(ngModel)]="usuario.email"
@@ -17,11 +19,12 @@
             required
             email
           />
-
           <span class="focus-input100"></span>
         </div>
 
-        <!-- <span class="text-danger">El nombre es obligatorio</span> -->
+        <span *ngIf="forma.submitted && forma.controls['nombre']?.errors" class="text-danger">
+          El nombre es obligatorio
+        </span>
         <div class="wrap-input100 m-b-16">
           <input
             [(ngModel)]="usuario.nombre"
@@ -36,12 +39,22 @@
           <span class="focus-input100"></span>
         </div>
 
-        <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
+        <span *ngIf="forma.submitted && forma.controls['password']?.errors" class="text-danger">
+          La contraseña debe de ser más de 6 letras
+        </span>
         <div class="wrap-input100 m-b-16" data-validate="Password is required">
-          <input [(ngModel)]="usuario.password" class="input100" type="password" name="pass" required minlength="6" placeholder="Password" />
+          <input
+            [(ngModel)]="usuario.password"
+            class="input100"
+            type="password"
+            name="password"
+            required
+            minlength="6"
+            placeholder="Password"
+          />
           <span class="focus-input100"></span>
         </div>
- 
+
         <div class="flex-sb-m w-full p-t-3 p-b-24">
           <div class="contact100-form-checkbox">
             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" />
