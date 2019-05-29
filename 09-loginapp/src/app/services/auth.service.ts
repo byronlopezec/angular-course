@@ -67,4 +67,8 @@ export class AuthService {
       this.userToken = '';
     }
   }
+
+  estaAutenticado() {
+    return this.userToken.length > 2;
+  }
 }
