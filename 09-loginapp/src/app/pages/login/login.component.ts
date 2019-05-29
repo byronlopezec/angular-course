@@ -12,11 +12,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   usuario: UsuarioModel;
+  recordarme = false;
+
   constructor(private auth: AuthService, private router: Router) {
     this.usuario = new UsuarioModel();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (localStorage.getItem('email')) {
+      this.usuario.email = localStorage.getItem('email');
+      this.recordarme = true;
+    }
+  }
 
   login(forma: NgForm) {
     if (forma.invalid) {
@@ -27,8 +34,12 @@ export class LoginComponent implements OnInit {
 
     this.auth.login(this.usuario).subscribe(
       (response) => {
-        console.log(response);
         Swal.close();
+
+        if (this.recordarme) {
+          localStorage.setItem('email', this.usuario.email);
+        }
+
         this.router.navigateByUrl('/home');
       },
       (error) => {

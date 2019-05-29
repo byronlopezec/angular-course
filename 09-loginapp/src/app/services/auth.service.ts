@@ -28,7 +28,8 @@ export class AuthService {
 
     return this.http.post(`${this.url}/verifyPassword?key=${this.apikey}`, authData).pipe(
       map((response: any) => {
-        const idToken = response;
+        const { idToken } = response;
+        console.log(idToken);
         this.guardarToken(idToken);
         return response;
       }),
@@ -48,7 +49,7 @@ export class AuthService {
 
     return this.http.post(`${this.url}/signupNewUser?key=${this.apikey}`, authData).pipe(
       map((response: any) => {
-        const idToken = response;
+        const { idToken } = response;
         localStorage.setItem('token', idToken);
         return response;
       }),
