@@ -1,20 +1,9 @@
-
-
-
-
-
-
-
 // Ejemplo final
 export class NuevoSuperHeroe {
-
-    constructor() {
-
-    }
+  constructor() {}
 }
-
-
-
-
-
-
+export class NuevaClase {
+  constructor() {
+    //tenemos presidente XD
+  }
+}

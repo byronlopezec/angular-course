@@ -1,4 +1,4 @@
-import { SuperHeroe } from './extra/classes';
+import { SuperHeroe } from "./extra/classes";
 
 /*
     Objetivo:
@@ -10,16 +10,14 @@ import { SuperHeroe } from './extra/classes';
         F2
 */
 
-
 const wolverine = new SuperHeroe();
-const ironman   = new SuperHeroe();
+const ironman = new SuperHeroe();
 const spiderman = new SuperHeroe();
 
 function saludar() {
-    return 'El SuperHeroe Wolverine es genial!';
+  return "El SuperHeroe Wolverine es genial!";
 }
 
 function gritar() {
-    return 'El SuperHeroe en este string no se debe de cambiar';
+  return "El SuperHeroe en este string no se debe de cambiar";
 }
-

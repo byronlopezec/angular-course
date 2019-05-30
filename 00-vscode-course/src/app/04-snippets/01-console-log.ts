@@ -1,15 +1,2 @@
-
-
-
-
-
-
-
-
 // Ejemplo final
-console.log('hola mundo');
-
-
-
-
-
+console.log("nav bar");

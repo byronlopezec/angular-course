@@ -12,14 +12,13 @@
         Ctrl + Shift + L
 */
 
-let NoMeBorres = ':)';
-let Borrame = ':(';
+let NoMeBorres = ":)";
+let Borrame = ":(";
 
-NoMeBorres = '1';
-Borrame    = 'a';
-NoMeBorres = '1';
-Borrame    = 'a';
-
+NoMeBorres = "1";
+Borrame = "a";
+NoMeBorres = "1";
+Borrame = "a";
 
 // Resultado final (sin los comentarios claro.)
 
