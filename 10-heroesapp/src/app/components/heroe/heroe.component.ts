@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HeroeModel } from 'src/app/models/heroe.model';
 import { HeroesService } from 'src/app/services/heroes.service';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
   styles: [],
 })
-export class HeroeComponent {
+export class HeroeComponent implements OnInit {
   heroe: HeroeModel = new HeroeModel();
 
-  constructor(private heroesService: HeroesService) {}
+  constructor(private heroesService: HeroesService, private router: ActivatedRoute) {}
+
+  ngOnInit() {
+    const id = this.router.snapshot.paramMap.get('id');
+    console.log(id);
+    this.heroesService.getHeroe(id).subscribe((response) => {
+      this.heroe = response;
+    });
+  }
 
   guardar(forma: NgForm) {
     if (forma.invalid) {

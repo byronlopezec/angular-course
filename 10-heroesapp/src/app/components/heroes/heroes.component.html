@@ -24,13 +24,23 @@
       <td scope="row">{{ i + 1 }}</td>
       <td>{{ heroe.nombre }}</td>
       <td>{{ heroe.poder }}</td>
+
       <td>
         <span class="badge w-auto text-center" [ngClass]="{ 'badge-success': heroe.vivo, 'badge-danger': !heroe.vivo }">
           {{ heroe.vivo ? 'Vivo' : 'Muerto' }}
           <i class="fas" [ngClass]="{ 'fa-smile': heroe.vivo, 'fa-dizzy': !heroe.vivo }"></i>
         </span>
       </td>
-      <td></td>
+
+      <td>
+        <button [routerLink]="['/heroe', heroe.id]" type="button" class="btn btn-primary">
+          <i class="fas fa-pen "></i>
+        </button>
+
+        <button type="button" class="btn btn-danger ml-1">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

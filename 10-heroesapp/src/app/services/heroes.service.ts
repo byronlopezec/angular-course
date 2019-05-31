@@ -12,6 +12,16 @@ export class HeroesService {
 
   constructor(private http: HttpClient) {}
 
+  getHeroe(id: string): Observable<HeroeModel> {
+    return this.http.get(`${this.url}/heroes/${id}.json`).pipe(
+      map((response: any) => {
+        const heroe: HeroeModel = response;
+        heroe.id = id;
+        return heroe;
+      }),
+    );
+  }
+
   crearHeroe(heroe: HeroeModel): Observable<HeroeModel> {
     return this.http.post(`${this.url}/heroes.json`, heroe).pipe(
       map((response: any) => {
