@@ -14,18 +14,22 @@
     <tr>
       <th>#</th>
       <th>Nombre</th>
-      <th>Heroe</th>
+      <th>Poder</th>
+      <th>Estado</th>
+      <th>Tools</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td scope="row"></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td scope="row"></td>
-      <td></td>
+    <tr *ngFor="let heroe of heroes; let i = index">
+      <td scope="row">{{ i + 1 }}</td>
+      <td>{{ heroe.nombre }}</td>
+      <td>{{ heroe.poder }}</td>
+      <td>
+        <span class="badge w-auto text-center" [ngClass]="{ 'badge-success': heroe.vivo, 'badge-danger': !heroe.vivo }">
+          {{ heroe.vivo ? 'Vivo' : 'Muerto' }}
+          <i class="fas" [ngClass]="{ 'fa-smile': heroe.vivo, 'fa-dizzy': !heroe.vivo }"></i>
+        </span>
+      </td>
       <td></td>
     </tr>
   </tbody>

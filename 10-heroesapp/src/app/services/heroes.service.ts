@@ -20,6 +20,7 @@ export class HeroesService {
       }),
     );
   }
+
   actualizarHeroe(heroe: HeroeModel): Observable<HeroeModel> {
     const heroeTemp = { ...heroe };
     delete heroeTemp.id;
@@ -30,4 +31,33 @@ export class HeroesService {
       }),
     );
   }
+
+  obtenerHeroes(): Observable<HeroeModel[]> {
+    return this.http.get(`${this.url}/heroes.json`).pipe(map(this.crearArreglo));
+  }
+
+  private crearArreglo(heroesObj: object): HeroeModel[] {
+    const heroes: HeroeModel[] = [];
+
+    Object.keys(heroesObj).forEach((key) => {
+      const heroe: HeroeModel = heroesObj[key];
+      heroe.id = key;
+      heroes.push(heroe);
+    });
+
+    return heroes;
+  }
+  // private transformToList(response: object): HeroeModel[] {
+  //   const heroes: HeroeModel[] = [];
+
+  //   for (const key in response) {
+  //     if (response.hasOwnProperty(key)) {
+  //       const heroe: HeroeModel = response[key];
+  //       heroe.id = key;
+  //       heroes.push(heroe);
+  //     }
+  //   }
+
+  //   return heroes;
+  // }
 }
