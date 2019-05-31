@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HeroeModel } from 'src/app/models/heroe.model';
 import { HeroesService } from 'src/app/services/heroes.service';
+import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-heroe',
@@ -19,16 +21,20 @@ export class HeroeComponent {
       return;
     }
 
-    if (this.heroe.id) {
-      this.heroesService.actualizarHeroe(this.heroe).subscribe((response) => {
-        console.log('Heroe actualizado: ', response);
-      });
-    } else {
-      this.heroesService.crearHeroe(this.heroe).subscribe((response) => {
-        this.heroe = response;
+    let peticion: Observable<any>;
 
-        console.log('Heroe insertado: ', response);
-      });
+    Swal.fire({ title: 'Espere', text: 'Guardando información', type: 'info', allowOutsideClick: false });
+    Swal.showLoading();
+
+    if (this.heroe.id) {
+      peticion = this.heroesService.actualizarHeroe(this.heroe);
+    } else {
+      peticion = this.heroesService.crearHeroe(this.heroe);
     }
+
+    peticion.subscribe((response: any) => {
+      this.heroe = response;
+      Swal.fire({ title: this.heroe.nombre, text: 'Actualizado con exito', type: 'success' });
+    });
   }
 }
