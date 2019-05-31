@@ -17,9 +17,9 @@ export class HeroeComponent implements OnInit {
   constructor(private heroesService: HeroesService, private router: ActivatedRoute) {}
 
   ngOnInit() {
-    if (this.heroe.id) {
-      const id = this.router.snapshot.paramMap.get('id');
-      console.log(id);
+    const id = this.router.snapshot.paramMap.get('id');
+    console.log(id);
+    if (id !== 'nuevo') {
       this.heroesService.getHeroe(id).subscribe((response) => {
         this.heroe = response;
       });

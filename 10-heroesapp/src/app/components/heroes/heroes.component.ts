@@ -10,12 +10,15 @@ import Swal from 'sweetalert2';
 })
 export class HeroesComponent implements OnInit {
   heroes: HeroeModel[];
+  cargando: boolean;
 
   constructor(private heroesService: HeroesService) {}
 
   ngOnInit() {
+    this.cargando = true;
     this.heroesService.obtenerHeroes().subscribe((response) => {
       this.heroes = response;
+      this.cargando = false;
       console.log(response);
     });
   }
