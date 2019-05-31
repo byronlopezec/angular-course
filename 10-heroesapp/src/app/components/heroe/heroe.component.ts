@@ -17,11 +17,13 @@ export class HeroeComponent implements OnInit {
   constructor(private heroesService: HeroesService, private router: ActivatedRoute) {}
 
   ngOnInit() {
-    const id = this.router.snapshot.paramMap.get('id');
-    console.log(id);
-    this.heroesService.getHeroe(id).subscribe((response) => {
-      this.heroe = response;
-    });
+    if (this.heroe.id) {
+      const id = this.router.snapshot.paramMap.get('id');
+      console.log(id);
+      this.heroesService.getHeroe(id).subscribe((response) => {
+        this.heroe = response;
+      });
+    }
   }
 
   guardar(forma: NgForm) {

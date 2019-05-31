@@ -12,6 +12,10 @@ export class HeroesService {
 
   constructor(private http: HttpClient) {}
 
+  deleteHeroe(id: string) {
+    return this.http.delete(`${this.url}/heroes/${id}.json`);
+  }
+
   getHeroe(id: string): Observable<HeroeModel> {
     return this.http.get(`${this.url}/heroes/${id}.json`).pipe(
       map((response: any) => {
@@ -48,6 +52,9 @@ export class HeroesService {
 
   private crearArreglo(heroesObj: object): HeroeModel[] {
     const heroes: HeroeModel[] = [];
+    if (heroesObj === null) {
+      return null;
+    }
 
     Object.keys(heroesObj).forEach((key) => {
       const heroe: HeroeModel = heroesObj[key];
